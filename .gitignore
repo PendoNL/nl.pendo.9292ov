@@ -1,0 +1,6 @@
+/env.json
+/node_modules/
+/.homeybuild/
+/.idea
+/.laravel
+/CLAUDE.md

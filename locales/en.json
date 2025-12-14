@@ -1,0 +1,6 @@
+{
+  "errors": {
+    "no_departures": "No departures found",
+    "api_error": "Failed to fetch departure information"
+  }
+}

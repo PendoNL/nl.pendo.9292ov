@@ -1,0 +1,51 @@
+{
+  "title": {
+    "en": "Departure is within minutes",
+    "nl": "Vertrek is binnen minuten"
+  },
+  "titleFormatted": {
+    "en": "Next departure from [[station]] to [[destination]] is within [[minutes]] minutes",
+    "nl": "Volgend vertrek vanaf [[station]] naar [[destination]] is binnen [[minutes]] minuten"
+  },
+  "hint": {
+    "en": "Returns true if there is a departure to the destination within the specified time.",
+    "nl": "Geeft waar terug als er een vertrek naar de bestemming is binnen de opgegeven tijd."
+  },
+  "args": [
+    {
+      "type": "autocomplete",
+      "name": "station",
+      "title": {
+        "en": "Station",
+        "nl": "Station"
+      },
+      "placeholder": {
+        "en": "Search for a station...",
+        "nl": "Zoek een station..."
+      }
+    },
+    {
+      "type": "autocomplete",
+      "name": "destination",
+      "title": {
+        "en": "Destination",
+        "nl": "Bestemming"
+      },
+      "placeholder": {
+        "en": "Search for a destination...",
+        "nl": "Zoek een bestemming..."
+      }
+    },
+    {
+      "type": "number",
+      "name": "minutes",
+      "title": {
+        "en": "Minutes",
+        "nl": "Minuten"
+      },
+      "min": 1,
+      "max": 120,
+      "step": 1
+    }
+  ]
+}

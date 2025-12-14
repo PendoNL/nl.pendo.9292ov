@@ -1,0 +1,64 @@
+{
+  "title": {
+    "en": "Next departure matches",
+    "nl": "Volgend vertrek komt overeen"
+  },
+  "titleFormatted": {
+    "en": "Next departure from [[station]] is [[match_type]] [[match_value]]",
+    "nl": "Volgend vertrek vanaf [[station]] is [[match_type]] [[match_value]]"
+  },
+  "hint": {
+    "en": "Returns true if the next departure from the station matches the specified line or destination.",
+    "nl": "Geeft waar terug als het volgende vertrek overeenkomt met de opgegeven lijn of bestemming."
+  },
+  "args": [
+    {
+      "type": "autocomplete",
+      "name": "station",
+      "title": {
+        "en": "Station",
+        "nl": "Station"
+      },
+      "placeholder": {
+        "en": "Search for a station...",
+        "nl": "Zoek een station..."
+      }
+    },
+    {
+      "type": "dropdown",
+      "name": "match_type",
+      "title": {
+        "en": "Match type",
+        "nl": "Match type"
+      },
+      "values": [
+        {
+          "id": "line",
+          "title": {
+            "en": "Line",
+            "nl": "Lijn"
+          }
+        },
+        {
+          "id": "destination",
+          "title": {
+            "en": "Destination",
+            "nl": "Bestemming"
+          }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "match_value",
+      "title": {
+        "en": "Value",
+        "nl": "Waarde"
+      },
+      "placeholder": {
+        "en": "e.g. 5 or Amsterdam",
+        "nl": "bijv. 5 of Amsterdam"
+      }
+    }
+  ]
+}

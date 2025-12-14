@@ -1,0 +1,105 @@
+{
+  "title": {
+    "en": "Get departure info",
+    "nl": "Haal vertrekinfo op"
+  },
+  "titleFormatted": {
+    "en": "Get next departure info from [[station]] to [[destination]]",
+    "nl": "Haal volgende vertrekinfo op vanaf [[station]] naar [[destination]]"
+  },
+  "hint": {
+    "en": "Gets information about the next departure and returns it as tokens for use in other cards.",
+    "nl": "Haalt informatie over het volgende vertrek op en geeft deze terug als tokens voor gebruik in andere kaarten."
+  },
+  "args": [
+    {
+      "type": "autocomplete",
+      "name": "station",
+      "title": {
+        "en": "Station",
+        "nl": "Station"
+      },
+      "placeholder": {
+        "en": "Search for a station...",
+        "nl": "Zoek een station..."
+      }
+    },
+    {
+      "type": "autocomplete",
+      "name": "destination",
+      "title": {
+        "en": "Destination (optional)",
+        "nl": "Bestemming (optioneel)"
+      },
+      "placeholder": {
+        "en": "Any destination",
+        "nl": "Elke bestemming"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "line",
+      "type": "string",
+      "title": {
+        "en": "Line",
+        "nl": "Lijn"
+      },
+      "example": "5"
+    },
+    {
+      "name": "destination",
+      "type": "string",
+      "title": {
+        "en": "Destination",
+        "nl": "Bestemming"
+      },
+      "example": "Amsterdam Centraal"
+    },
+    {
+      "name": "minutes_until",
+      "type": "number",
+      "title": {
+        "en": "Minutes until departure",
+        "nl": "Minuten tot vertrek"
+      },
+      "example": 5
+    },
+    {
+      "name": "delay_minutes",
+      "type": "number",
+      "title": {
+        "en": "Delay (minutes)",
+        "nl": "Vertraging (minuten)"
+      },
+      "example": 3
+    },
+    {
+      "name": "planned_time",
+      "type": "string",
+      "title": {
+        "en": "Planned time",
+        "nl": "Geplande tijd"
+      },
+      "example": "14:30"
+    },
+    {
+      "name": "expected_time",
+      "type": "string",
+      "title": {
+        "en": "Expected time",
+        "nl": "Verwachte tijd"
+      },
+      "example": "14:33"
+    },
+    {
+      "name": "transport_type",
+      "type": "string",
+      "title": {
+        "en": "Transport type",
+        "nl": "Vervoerstype"
+      },
+      "example": "bus"
+    }
+  ]
+}

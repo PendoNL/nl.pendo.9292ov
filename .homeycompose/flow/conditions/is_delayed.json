@@ -1,0 +1,51 @@
+{
+  "title": {
+    "en": "Departure is delayed",
+    "nl": "Vertrek is vertraagd"
+  },
+  "titleFormatted": {
+    "en": "Departure from [[station]] to [[destination]] is delayed by more than [[minutes]] minutes",
+    "nl": "Vertrek vanaf [[station]] naar [[destination]] is meer dan [[minutes]] minuten vertraagd"
+  },
+  "hint": {
+    "en": "Returns true if the next departure to the destination is delayed by more than the specified amount.",
+    "nl": "Geeft waar terug als het volgende vertrek meer dan het opgegeven aantal minuten vertraagd is."
+  },
+  "args": [
+    {
+      "type": "autocomplete",
+      "name": "station",
+      "title": {
+        "en": "Station",
+        "nl": "Station"
+      },
+      "placeholder": {
+        "en": "Search for a station...",
+        "nl": "Zoek een station..."
+      }
+    },
+    {
+      "type": "autocomplete",
+      "name": "destination",
+      "title": {
+        "en": "Destination",
+        "nl": "Bestemming"
+      },
+      "placeholder": {
+        "en": "Search for a destination...",
+        "nl": "Zoek een bestemming..."
+      }
+    },
+    {
+      "type": "number",
+      "name": "minutes",
+      "title": {
+        "en": "Minutes",
+        "nl": "Minuten"
+      },
+      "min": 1,
+      "max": 60,
+      "step": 1
+    }
+  ]
+}

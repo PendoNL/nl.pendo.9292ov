@@ -1,0 +1,122 @@
+{
+  "title": {
+    "en": "Departure is delayed",
+    "nl": "Vertrek is vertraagd"
+  },
+  "titleFormatted": {
+    "en": "Departure to [[destination]] from [[station]] is delayed by more than [[min_delay]] minutes ([[trigger_mode]])",
+    "nl": "Vertrek naar [[destination]] vanaf [[station]] is meer dan [[min_delay]] minuten vertraagd ([[trigger_mode]])"
+  },
+  "hint": {
+    "en": "Triggers when a departure is delayed by more than the specified amount.",
+    "nl": "Wordt geactiveerd wanneer een vertrek meer dan het opgegeven aantal minuten vertraagd is."
+  },
+  "args": [
+    {
+      "type": "autocomplete",
+      "name": "station",
+      "title": {
+        "en": "Station",
+        "nl": "Station"
+      },
+      "placeholder": {
+        "en": "Search for a station...",
+        "nl": "Zoek een station..."
+      }
+    },
+    {
+      "type": "autocomplete",
+      "name": "destination",
+      "title": {
+        "en": "Destination",
+        "nl": "Bestemming"
+      },
+      "placeholder": {
+        "en": "Search for a destination...",
+        "nl": "Zoek een bestemming..."
+      }
+    },
+    {
+      "type": "number",
+      "name": "min_delay",
+      "title": {
+        "en": "Minimum delay (minutes)",
+        "nl": "Minimale vertraging (minuten)"
+      },
+      "min": 1,
+      "max": 60,
+      "step": 1
+    },
+    {
+      "type": "dropdown",
+      "name": "trigger_mode",
+      "title": {
+        "en": "Trigger mode",
+        "nl": "Trigger modus"
+      },
+      "values": [
+        {
+          "id": "once",
+          "title": {
+            "en": "Once per departure",
+            "nl": "Eenmaal per vertrek"
+          }
+        },
+        {
+          "id": "continuous",
+          "title": {
+            "en": "Every check while delayed",
+            "nl": "Elke controle tijdens vertraging"
+          }
+        }
+      ]
+    }
+  ],
+  "tokens": [
+    {
+      "name": "line",
+      "type": "string",
+      "title": {
+        "en": "Line",
+        "nl": "Lijn"
+      },
+      "example": "5"
+    },
+    {
+      "name": "destination",
+      "type": "string",
+      "title": {
+        "en": "Destination",
+        "nl": "Bestemming"
+      },
+      "example": "Amsterdam Centraal"
+    },
+    {
+      "name": "delay_minutes",
+      "type": "number",
+      "title": {
+        "en": "Delay (minutes)",
+        "nl": "Vertraging (minuten)"
+      },
+      "example": 5
+    },
+    {
+      "name": "planned_time",
+      "type": "string",
+      "title": {
+        "en": "Planned time",
+        "nl": "Geplande tijd"
+      },
+      "example": "14:30"
+    },
+    {
+      "name": "expected_time",
+      "type": "string",
+      "title": {
+        "en": "Expected time",
+        "nl": "Verwachte tijd"
+      },
+      "example": "14:35"
+    }
+  ]
+}

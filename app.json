@@ -1,0 +1,560 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "nl.pendo.9292ov",
+  "version": "1.0.0",
+  "compatibility": ">=12.4.0",
+  "sdk": 3,
+  "brandColor": "#000",
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "9292ov"
+  },
+  "description": {
+    "en": "Departure times of Dutch public transport as triggers in Homey Pro",
+    "nl": "Vertrektijden van OV in Nederland als triggers in Homey Pro"
+  },
+  "category": [
+    "tools"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Joshua de Gier",
+    "email": "info@pendo.nl"
+  },
+  "flow": {
+    "triggers": [
+      {
+        "title": {
+          "en": "Departure is delayed",
+          "nl": "Vertrek is vertraagd"
+        },
+        "titleFormatted": {
+          "en": "Departure to [[destination]] from [[station]] is delayed by more than [[min_delay]] minutes ([[trigger_mode]])",
+          "nl": "Vertrek naar [[destination]] vanaf [[station]] is meer dan [[min_delay]] minuten vertraagd ([[trigger_mode]])"
+        },
+        "hint": {
+          "en": "Triggers when a departure is delayed by more than the specified amount.",
+          "nl": "Wordt geactiveerd wanneer een vertrek meer dan het opgegeven aantal minuten vertraagd is."
+        },
+        "args": [
+          {
+            "type": "autocomplete",
+            "name": "station",
+            "title": {
+              "en": "Station",
+              "nl": "Station"
+            },
+            "placeholder": {
+              "en": "Search for a station...",
+              "nl": "Zoek een station..."
+            }
+          },
+          {
+            "type": "autocomplete",
+            "name": "destination",
+            "title": {
+              "en": "Destination",
+              "nl": "Bestemming"
+            },
+            "placeholder": {
+              "en": "Search for a destination...",
+              "nl": "Zoek een bestemming..."
+            }
+          },
+          {
+            "type": "number",
+            "name": "min_delay",
+            "title": {
+              "en": "Minimum delay (minutes)",
+              "nl": "Minimale vertraging (minuten)"
+            },
+            "min": 1,
+            "max": 60,
+            "step": 1
+          },
+          {
+            "type": "dropdown",
+            "name": "trigger_mode",
+            "title": {
+              "en": "Trigger mode",
+              "nl": "Trigger modus"
+            },
+            "values": [
+              {
+                "id": "once",
+                "title": {
+                  "en": "Once per departure",
+                  "nl": "Eenmaal per vertrek"
+                }
+              },
+              {
+                "id": "continuous",
+                "title": {
+                  "en": "Every check while delayed",
+                  "nl": "Elke controle tijdens vertraging"
+                }
+              }
+            ]
+          }
+        ],
+        "tokens": [
+          {
+            "name": "line",
+            "type": "string",
+            "title": {
+              "en": "Line",
+              "nl": "Lijn"
+            },
+            "example": "5"
+          },
+          {
+            "name": "destination",
+            "type": "string",
+            "title": {
+              "en": "Destination",
+              "nl": "Bestemming"
+            },
+            "example": "Amsterdam Centraal"
+          },
+          {
+            "name": "delay_minutes",
+            "type": "number",
+            "title": {
+              "en": "Delay (minutes)",
+              "nl": "Vertraging (minuten)"
+            },
+            "example": 5
+          },
+          {
+            "name": "planned_time",
+            "type": "string",
+            "title": {
+              "en": "Planned time",
+              "nl": "Geplande tijd"
+            },
+            "example": "14:30"
+          },
+          {
+            "name": "expected_time",
+            "type": "string",
+            "title": {
+              "en": "Expected time",
+              "nl": "Verwachte tijd"
+            },
+            "example": "14:35"
+          }
+        ],
+        "id": "departure_delayed"
+      },
+      {
+        "title": {
+          "en": "Departure is soon",
+          "nl": "Vertrek is binnenkort"
+        },
+        "titleFormatted": {
+          "en": "Departure to [[destination]] from [[station]] is within [[minutes]] minutes ([[trigger_mode]])",
+          "nl": "Vertrek naar [[destination]] vanaf [[station]] is binnen [[minutes]] minuten ([[trigger_mode]])"
+        },
+        "hint": {
+          "en": "Triggers when a departure to the specified destination is within the specified minutes.",
+          "nl": "Wordt geactiveerd wanneer een vertrek naar de opgegeven bestemming binnen het opgegeven aantal minuten is."
+        },
+        "args": [
+          {
+            "type": "autocomplete",
+            "name": "station",
+            "title": {
+              "en": "Station",
+              "nl": "Station"
+            },
+            "placeholder": {
+              "en": "Search for a station...",
+              "nl": "Zoek een station..."
+            }
+          },
+          {
+            "type": "autocomplete",
+            "name": "destination",
+            "title": {
+              "en": "Destination",
+              "nl": "Bestemming"
+            },
+            "placeholder": {
+              "en": "Search for a destination...",
+              "nl": "Zoek een bestemming..."
+            }
+          },
+          {
+            "type": "number",
+            "name": "minutes",
+            "title": {
+              "en": "Minutes",
+              "nl": "Minuten"
+            },
+            "min": 1,
+            "max": 60,
+            "step": 1
+          },
+          {
+            "type": "dropdown",
+            "name": "trigger_mode",
+            "title": {
+              "en": "Trigger mode",
+              "nl": "Trigger modus"
+            },
+            "values": [
+              {
+                "id": "once",
+                "title": {
+                  "en": "Once per departure",
+                  "nl": "Eenmaal per vertrek"
+                }
+              },
+              {
+                "id": "continuous",
+                "title": {
+                  "en": "Every check while within threshold",
+                  "nl": "Elke controle binnen drempel"
+                }
+              }
+            ]
+          }
+        ],
+        "tokens": [
+          {
+            "name": "line",
+            "type": "string",
+            "title": {
+              "en": "Line",
+              "nl": "Lijn"
+            },
+            "example": "5"
+          },
+          {
+            "name": "destination",
+            "type": "string",
+            "title": {
+              "en": "Destination",
+              "nl": "Bestemming"
+            },
+            "example": "Amsterdam Centraal"
+          },
+          {
+            "name": "minutes_until",
+            "type": "number",
+            "title": {
+              "en": "Minutes until departure",
+              "nl": "Minuten tot vertrek"
+            },
+            "example": 5
+          },
+          {
+            "name": "planned_time",
+            "type": "string",
+            "title": {
+              "en": "Planned time",
+              "nl": "Geplande tijd"
+            },
+            "example": "14:30"
+          },
+          {
+            "name": "expected_time",
+            "type": "string",
+            "title": {
+              "en": "Expected time",
+              "nl": "Verwachte tijd"
+            },
+            "example": "14:32"
+          }
+        ],
+        "id": "departure_soon"
+      }
+    ],
+    "conditions": [
+      {
+        "title": {
+          "en": "Departure is within minutes",
+          "nl": "Vertrek is binnen minuten"
+        },
+        "titleFormatted": {
+          "en": "Next departure from [[station]] to [[destination]] is within [[minutes]] minutes",
+          "nl": "Volgend vertrek vanaf [[station]] naar [[destination]] is binnen [[minutes]] minuten"
+        },
+        "hint": {
+          "en": "Returns true if there is a departure to the destination within the specified time.",
+          "nl": "Geeft waar terug als er een vertrek naar de bestemming is binnen de opgegeven tijd."
+        },
+        "args": [
+          {
+            "type": "autocomplete",
+            "name": "station",
+            "title": {
+              "en": "Station",
+              "nl": "Station"
+            },
+            "placeholder": {
+              "en": "Search for a station...",
+              "nl": "Zoek een station..."
+            }
+          },
+          {
+            "type": "autocomplete",
+            "name": "destination",
+            "title": {
+              "en": "Destination",
+              "nl": "Bestemming"
+            },
+            "placeholder": {
+              "en": "Search for a destination...",
+              "nl": "Zoek een bestemming..."
+            }
+          },
+          {
+            "type": "number",
+            "name": "minutes",
+            "title": {
+              "en": "Minutes",
+              "nl": "Minuten"
+            },
+            "min": 1,
+            "max": 120,
+            "step": 1
+          }
+        ],
+        "id": "departure_within_minutes"
+      },
+      {
+        "title": {
+          "en": "Departure is delayed",
+          "nl": "Vertrek is vertraagd"
+        },
+        "titleFormatted": {
+          "en": "Departure from [[station]] to [[destination]] is delayed by more than [[minutes]] minutes",
+          "nl": "Vertrek vanaf [[station]] naar [[destination]] is meer dan [[minutes]] minuten vertraagd"
+        },
+        "hint": {
+          "en": "Returns true if the next departure to the destination is delayed by more than the specified amount.",
+          "nl": "Geeft waar terug als het volgende vertrek meer dan het opgegeven aantal minuten vertraagd is."
+        },
+        "args": [
+          {
+            "type": "autocomplete",
+            "name": "station",
+            "title": {
+              "en": "Station",
+              "nl": "Station"
+            },
+            "placeholder": {
+              "en": "Search for a station...",
+              "nl": "Zoek een station..."
+            }
+          },
+          {
+            "type": "autocomplete",
+            "name": "destination",
+            "title": {
+              "en": "Destination",
+              "nl": "Bestemming"
+            },
+            "placeholder": {
+              "en": "Search for a destination...",
+              "nl": "Zoek een bestemming..."
+            }
+          },
+          {
+            "type": "number",
+            "name": "minutes",
+            "title": {
+              "en": "Minutes",
+              "nl": "Minuten"
+            },
+            "min": 1,
+            "max": 60,
+            "step": 1
+          }
+        ],
+        "id": "is_delayed"
+      },
+      {
+        "title": {
+          "en": "Next departure matches",
+          "nl": "Volgend vertrek komt overeen"
+        },
+        "titleFormatted": {
+          "en": "Next departure from [[station]] is [[match_type]] [[match_value]]",
+          "nl": "Volgend vertrek vanaf [[station]] is [[match_type]] [[match_value]]"
+        },
+        "hint": {
+          "en": "Returns true if the next departure from the station matches the specified line or destination.",
+          "nl": "Geeft waar terug als het volgende vertrek overeenkomt met de opgegeven lijn of bestemming."
+        },
+        "args": [
+          {
+            "type": "autocomplete",
+            "name": "station",
+            "title": {
+              "en": "Station",
+              "nl": "Station"
+            },
+            "placeholder": {
+              "en": "Search for a station...",
+              "nl": "Zoek een station..."
+            }
+          },
+          {
+            "type": "dropdown",
+            "name": "match_type",
+            "title": {
+              "en": "Match type",
+              "nl": "Match type"
+            },
+            "values": [
+              {
+                "id": "line",
+                "title": {
+                  "en": "Line",
+                  "nl": "Lijn"
+                }
+              },
+              {
+                "id": "destination",
+                "title": {
+                  "en": "Destination",
+                  "nl": "Bestemming"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "name": "match_value",
+            "title": {
+              "en": "Value",
+              "nl": "Waarde"
+            },
+            "placeholder": {
+              "en": "e.g. 5 or Amsterdam",
+              "nl": "bijv. 5 of Amsterdam"
+            }
+          }
+        ],
+        "id": "next_departure_is"
+      }
+    ],
+    "actions": [
+      {
+        "title": {
+          "en": "Get departure info",
+          "nl": "Haal vertrekinfo op"
+        },
+        "titleFormatted": {
+          "en": "Get next departure info from [[station]] to [[destination]]",
+          "nl": "Haal volgende vertrekinfo op vanaf [[station]] naar [[destination]]"
+        },
+        "hint": {
+          "en": "Gets information about the next departure and returns it as tokens for use in other cards.",
+          "nl": "Haalt informatie over het volgende vertrek op en geeft deze terug als tokens voor gebruik in andere kaarten."
+        },
+        "args": [
+          {
+            "type": "autocomplete",
+            "name": "station",
+            "title": {
+              "en": "Station",
+              "nl": "Station"
+            },
+            "placeholder": {
+              "en": "Search for a station...",
+              "nl": "Zoek een station..."
+            }
+          },
+          {
+            "type": "autocomplete",
+            "name": "destination",
+            "title": {
+              "en": "Destination (optional)",
+              "nl": "Bestemming (optioneel)"
+            },
+            "placeholder": {
+              "en": "Any destination",
+              "nl": "Elke bestemming"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "line",
+            "type": "string",
+            "title": {
+              "en": "Line",
+              "nl": "Lijn"
+            },
+            "example": "5"
+          },
+          {
+            "name": "destination",
+            "type": "string",
+            "title": {
+              "en": "Destination",
+              "nl": "Bestemming"
+            },
+            "example": "Amsterdam Centraal"
+          },
+          {
+            "name": "minutes_until",
+            "type": "number",
+            "title": {
+              "en": "Minutes until departure",
+              "nl": "Minuten tot vertrek"
+            },
+            "example": 5
+          },
+          {
+            "name": "delay_minutes",
+            "type": "number",
+            "title": {
+              "en": "Delay (minutes)",
+              "nl": "Vertraging (minuten)"
+            },
+            "example": 3
+          },
+          {
+            "name": "planned_time",
+            "type": "string",
+            "title": {
+              "en": "Planned time",
+              "nl": "Geplande tijd"
+            },
+            "example": "14:30"
+          },
+          {
+            "name": "expected_time",
+            "type": "string",
+            "title": {
+              "en": "Expected time",
+              "nl": "Verwachte tijd"
+            },
+            "example": "14:33"
+          },
+          {
+            "name": "transport_type",
+            "type": "string",
+            "title": {
+              "en": "Transport type",
+              "nl": "Vervoerstype"
+            },
+            "example": "bus"
+          }
+        ],
+        "id": "get_departure_info"
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "errors": {
+    "no_departures": "Geen vertrekken gevonden",
+    "api_error": "Kon vertrekinformatie niet ophalen"
+  }
+}
