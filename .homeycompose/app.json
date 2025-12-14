@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "compatibility": ">=12.4.0",
   "sdk": 3,
-  "brandColor": "#000",
+  "brandColor": "#295FE6",
   "platforms": [
     "local"
   ],
@@ -26,11 +26,11 @@
     "name": "Joshua de Gier",
     "email": "info@pendo.nl"
   },
-  "homeyCommunityTopicId": 118309,
-  "source": "https://github.com/PendoNL/nl.pendo.spotify",
-  "issues": "https://github.com/PendoNL/nl.pendo.spotify/issues",
+  "homeyCommunityTopicId": 146896,
+  "source": "https://github.com/PendoNL/nl.pendo.9292ov",
+  "issues": "https://github.com/PendoNL/nl.pendo.9292ov/issues",
   "homepage": "https://pendo.nl",
   "bugs": {
-    "url": "https://github.com/PendoNL/nl.pendo.spotify/issues"
+    "url": "https://github.com/PendoNL/nl.pendo.9292ov/issues"
   }
 }

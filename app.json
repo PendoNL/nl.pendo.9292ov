@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "compatibility": ">=12.4.0",
   "sdk": 3,
-  "brandColor": "#000",
+  "brandColor": "#295FE6",
   "platforms": [
     "local"
   ],
@@ -12,7 +12,7 @@
     "en": "9292ov"
   },
   "description": {
-    "en": "Departure times of Dutch public transport as triggers in Homey Pro",
+    "en": "Use Dutch public transport data for automations",
     "nl": "Vertrektijden van OV in Nederland als triggers in Homey Pro"
   },
   "category": [
@@ -21,12 +21,18 @@
   "permissions": [],
   "images": {
     "small": "/assets/images/small.png",
-    "large": "/assets/images/large.png",
-    "xlarge": "/assets/images/xlarge.png"
+    "large": "/assets/images/large.png"
   },
   "author": {
     "name": "Joshua de Gier",
     "email": "info@pendo.nl"
+  },
+  "homeyCommunityTopicId": 146896,
+  "source": "https://github.com/PendoNL/nl.pendo.9292ov",
+  "issues": "https://github.com/PendoNL/nl.pendo.9292ov/issues",
+  "homepage": "https://pendo.nl",
+  "bugs": {
+    "url": "https://github.com/PendoNL/nl.pendo.9292ov/issues"
   },
   "flow": {
     "triggers": [
