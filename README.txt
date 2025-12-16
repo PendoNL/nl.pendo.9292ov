@@ -1,1 +1,3 @@
-Use Dutch public transport data for automations
+This app brings Dutch public transport information from 9292 right into your smart home automations. It lets you set up triggers based on real-time departure data. So you could, for example, turn on your hallway lights or send yourself a notification when your train or bus is about to leave. The app supports any station in the Netherlands and can filter by specific destinations.
+
+Beyond triggers, you can also use conditions to check things like "is the next departure delayed by more than 5 minutes?" or actions to fetch departure details into your flow. It's a handy tool for commuters who want their home to respond to their travel schedule automatically.
